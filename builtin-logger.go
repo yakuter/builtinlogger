@@ -22,7 +22,7 @@ type BuiltinLogger struct {
 	logger *log.Logger
 }
 
-func NewBuiltinLogger() *BuiltinLogger {
+func New() *BuiltinLogger {
 	return &BuiltinLogger{logger: log.New(os.Stdout, "", 5)}
 }
 
@@ -59,9 +59,9 @@ func (l *BuiltinLogger) Errorf(format string, args ...interface{}) {
 }
 
 func (l *BuiltinLogger) Fatal(args ...interface{}) {
-	l.logger.Println(args...)
+	l.logger.Fatalln(args...)
 }
 
 func (l *BuiltinLogger) Fatalf(format string, args ...interface{}) {
-	l.logger.Printf(format, args...)
+	l.logger.Fatalf(format, args...)
 }
