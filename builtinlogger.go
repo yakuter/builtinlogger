@@ -1,4 +1,4 @@
-package builtin_logger
+package builtinlogger
 
 import (
 	"log"
